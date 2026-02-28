@@ -26,8 +26,8 @@ class Book(models.Model): #Should be sorted by the date it was published in desc
     )
     author = models.CharField()
     pubYear = models.IntegerField()
-    createdOn = models.DateTimeField() #only gets set when the model is created
-    updatedOn = models.DateTimeField() #always updated on the last model update
+    createdOn = models.DateTimeField(auto_now_add=True) #only gets set when the model is created
+    updatedOn = models.DateTimeField(auto_now=True) #always updated on the last model update
 
     def __str__(self):
         return'{}'.format(self.title)
