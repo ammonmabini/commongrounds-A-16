@@ -1,0 +1,22 @@
+{% extends 'localevents/base_localevents.html' %}
+
+{% block header %}
+    <h3>Local Events</h3>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ event.title }} - {{ event.category }}</h1>
+    <h4>{{ event.description }}</h4>
+    <p>Location: {{ event.location }}</p>
+    {% if event.start_time|date:"Y-m-d" == event.end_time|date:"Y-m-d" %}
+        <p>Date & Time: {{ event.start_time|date:"Y-m-d" }} ({{ event.start_time|date:"H:i" }} - {{ event.end_time|date:"H:i" }})</p>
+    {% else %}
+        <p>Date & Time: {{ event.start_time|date:"Y-m-d (H:i)" }} - {{ event.end_time|date:"Y-m-d (H:i)" }}</p>
+    {% endif %}
+    <p>Created on {{ event.created_on|date:"Y-m-d (H:i)" }}</p>
+    <p>Last updated on {{ event.updated_on|date:"Y-m-d (H:i)" }}</p>
+    <br/>
+    <a href="{% url 'localevents:event_list' %}">Return to Event List</a>
+
+
+{% endblock %}
