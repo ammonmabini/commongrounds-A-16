@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title> {% block title %} Local Events {% endblock %}</title>
+        {% block styles %} {% endblock %}
+    </head>
+
+    <body>
+        {% block header %} {% endblock %}
+        <div id="content">
+            {% block content %} {% endblock %}
+        </div>
+        {% block scripts %} {% endblock %}
+    </body>
+</html>
