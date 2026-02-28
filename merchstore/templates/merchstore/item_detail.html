@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ item.name }}</title>
+</head>
+<body>
+    <main>
+        <h1>{{ item.name }}</h1>
+        <section>
+            <p><strong>Type:</strong> {{ item.product_type.name|default:"Uncategorized" }}</p>
+            <p><strong>Price:</strong> {{ item.price|floatformat:2 }}</p>
+            <p>{{ item.description }}</p>
+        </section>
+        <p><a href="{% url 'item_list' %}">Back to items list</a></p>
+    </main>
+</body>
+</html>
