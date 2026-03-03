@@ -27,9 +27,9 @@ class Book(models.Model):
         blank=True
     )
     author = models.CharField()
-    pubYear = models.IntegerField()
-    createdOn = models.DateTimeField(auto_now_add=True)
-    updatedOn = models.DateTimeField(auto_now=True)
+    publication_year = models.IntegerField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
