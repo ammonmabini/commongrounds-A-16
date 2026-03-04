@@ -14,7 +14,7 @@
                 {% for item in items %}
                     <li>
                         <article>
-                            <h2><a href="{% url 'item_detail' item.id %}">{{ item.name }}</a></h2>
+                            <h2><a href="{% url 'merchstore:item_detail' item.id %}">{{ item.name }}</a></h2>
                             <p><strong>Type:</strong> {{ item.product_type.name|default:"Uncategorized" }}</p>
                             <p><strong>Price:</strong> {{ item.price|floatformat:2 }}</p>
                             <p>{{ item.description }}</p>
