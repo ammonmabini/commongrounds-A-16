@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'localevents',
+    'merchstore',
 ]
 
 MIDDLEWARE = [
@@ -119,5 +120,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = os.getenv('STATIC_ROOT')
-STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = os.getenv('STATIC_URL')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
