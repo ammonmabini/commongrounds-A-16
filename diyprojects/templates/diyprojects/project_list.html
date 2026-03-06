@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>DIY Projects</title>
-</head>
+{% extends 'diyprojects_base.html' %}
 
-<body>
+{% block header %}
+    <h1>DIY Projects</h1>
+{% endblock %}
 
-<h1>DIY Projects</h1>
+{% block content %}
 
 <ul>
     {% for project in projects %}
@@ -21,8 +19,4 @@
         </li>
     {% endfor %}
 </ul>
-
-</body>
-
-
-</html>
+{% endblock %}

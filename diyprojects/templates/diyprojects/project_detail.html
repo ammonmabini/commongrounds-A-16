@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ project.title }}</title>
-</head>
+{% extends 'diyprojects_base.html' %}
 
-<body>
+{% block header %}
+    <h3> Project Detail </h3>
+    <h1>{{ project.title }}</h1>
+{% endblock %}
 
-<h1>{{ project.title }}</h1>
-
+{% block content %}
 {% if project.category %}
 <p><strong>Category:</strong> {{ project.category.name }}</p>
 {% endif %}
@@ -27,6 +25,4 @@
 <p>
     <a href="{% url 'diyprojects:project-list' %}">Back to list</a>
 </p>
-
-</body>
-</html>
+{% endblock %}
