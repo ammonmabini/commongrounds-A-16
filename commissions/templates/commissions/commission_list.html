@@ -1,0 +1,20 @@
+{% extends 'commissions_base.html' %}
+
+{% block header %}
+    <h1>Commission Requests</h1>
+{% endblock %}
+
+{% block content %}
+    <ul>
+      {% for c in commissions %}
+        <li>
+          <a href="/commissions/request/{{ c.id }}">{{ c.title }}</a>
+          — needs {{ c.people_required }} people
+          <br />
+          <small>Created: {{ c.created_on }}</small>
+        </li>
+      {% empty %}
+        <li>No commission requests yet.</li>
+      {% endfor %}
+    </ul>
+{% endblock %}

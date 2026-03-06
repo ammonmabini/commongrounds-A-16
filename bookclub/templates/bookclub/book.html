@@ -1,0 +1,15 @@
+{% extends 'bookclub_base.html' %}
+{% load static %}
+
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block header %}
+    <h2>{{ book.title }}</h2>
+{% endblock %}
+{% block content %}
+    <ul>
+        <li>Genre: {{ book.genre.name }}</li>
+        <li>Author: {{ book.author }}</li>
+        <li>Year Published: {{ book.publication_year }}</li>
+    </ul>
+{% endblock %}

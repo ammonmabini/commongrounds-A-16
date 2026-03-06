@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DJANGO_SECRET')
+SECRET_KEY = os.getenv('DJANGO_SECRET', 'dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = os.getenv('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'diyprojects',
+    'commissions',
+    'bookclub',
+    'merchstore',
+    'localevents',
 ]
 
 MIDDLEWARE = [
@@ -119,5 +123,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = os.getenv('STATIC_URL')
-STATIC_ROOT = [os.path.join(BASE_DIR, 'static')]
+STATIC_URL = os.getenv('STATIC_URL', 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
