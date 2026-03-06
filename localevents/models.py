@@ -1,23 +1,30 @@
 from django.db import models
 from django.urls import reverse
 
+
 class EventType(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         return reverse('localevents:event_list', args=[str(self.name)])
 
     class Meta:
         ordering = ['name']
 
+
 class Event(models.Model):
     title = models.CharField(max_length=255)
-    category = models.ForeignKey(EventType, on_delete=models.CASCADE, 
-                                 related_name='category')
+    category = models.ForeignKey(
+        EventType,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name='category',
+    )
     description = models.TextField()
     location = models.CharField(max_length=255)
     start_time = models.DateTimeField(null=False)
@@ -27,7 +34,7 @@ class Event(models.Model):
 
     def __str__(self):
         return '{}: {} '.format(self.title, self.description)
-    
+
     def get_absolute_url(self):
         return reverse('localevents:event_detail', args=[str(self.pk)])
 

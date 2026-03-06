@@ -1,7 +1,8 @@
 from django.db import models
 from django.urls import reverse
 
-class Genre(models.Model): #Should be sorted by name in ascending order
+
+class Genre(models.Model):  # Should be sorted by name in ascending order
     name = models.CharField(max_length=255)
     description = models.TextField()
 
@@ -35,7 +36,7 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('bookclub:book', kwargs={'pk' : self.pk})
+        return reverse('bookclub:book', kwargs={'pk': self.pk})
 
     class Meta:
         ordering = ['-publication_year']

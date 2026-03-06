@@ -21,8 +21,7 @@ urlpatterns = [
     path('diyprojects/', include('diyprojects.urls')),
     path('bookclub/', include('bookclub.urls'), name="ledger"),
     path('admin/', admin.site.urls),
-    path('commissions/', include('commissions.urls')), 
+    path('commissions/', include('commissions.urls')),
     path('merchstore/', include('merchstore.urls')),
     path('localevents/', include('localevents.urls')),
 ]
-

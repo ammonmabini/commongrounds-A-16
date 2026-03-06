@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class ProjectCategory(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
@@ -11,7 +12,8 @@ class ProjectCategory(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
 class Project(models.Model):
     title = models.CharField(max_length=255)
     category = models.ForeignKey(
@@ -30,8 +32,6 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def get_absolute_url(self):
         return reverse('diyprojects:project-detail', args=[self.pk])
-
-

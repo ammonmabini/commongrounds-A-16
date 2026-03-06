@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Event, EventType
 
+
 class EventAdmin(admin.ModelAdmin):
     model = Event
     search_fields = ('title', 'location')
@@ -16,6 +17,7 @@ class EventAdmin(admin.ModelAdmin):
             ]
         }),
     ]
+
 
 admin.site.register(EventType)
 admin.site.register(Event, EventAdmin)
