@@ -1,0 +1,22 @@
+{% extends 'diyprojects_base.html' %}
+
+{% block header %}
+    <h1>DIY Projects</h1>
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for project in projects %}
+        <li>
+            <a href="{{ project.get_absolute_url }}">
+                {{ project.title }}
+            </a>
+
+            {% if project.category %}
+                - {{ project.category.name }}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
