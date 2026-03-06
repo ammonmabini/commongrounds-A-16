@@ -1,4 +1,4 @@
-db.sqlite3
+pidb.sqlite3
 .env
 *.pyc
 *.log
@@ -6,3 +6,10 @@ db.sqlite3
 __pycache__/
 env/
 myenv/
+.venv/
+__pycache__/
+db.sqlite3
+.DS_Store
+*.pyc
+*.log
+.env
