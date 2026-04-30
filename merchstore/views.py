@@ -2,12 +2,11 @@ from collections import defaultdict
 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect, render
 from django.views import View
 from django.views.generic.edit import CreateView, UpdateView
 
-from accounts.decorators import role_required
-from accounts.mixins import RoleRequiredMixin
 from accounts.models import Profile
 
 from .forms import ProductForm, TransactionForm
@@ -16,6 +15,14 @@ from .strategies import (
     AuthenticatedPurchaseStrategy,
     GuestPurchaseStrategy,
 )
+
+
+def user_is_market_seller(user):
+    return (
+        user.is_authenticated
+        and hasattr(user, 'profile')
+        and user.profile.role == Profile.ROLE_MARKET_SELLER
+    )
 
 
 def item_list(request):
@@ -86,23 +93,31 @@ class ProductDetailView(View):
         )
 
 
-class ProductCreateView(RoleRequiredMixin, CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     template_name = 'merchstore/product_form.html'
-    required_role = Profile.ROLE_MARKET_SELLER
+
+    def dispatch(self, request, *args, **kwargs):
+        if not user_is_market_seller(request.user):
+            return redirect('accounts:permission_denied')
+        return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
         form.instance.owner = self.request.user.profile
         return super().form_valid(form)
 
 
-class ProductUpdateView(RoleRequiredMixin, UpdateView):
+class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
     form_class = ProductForm
     template_name = 'merchstore/product_form.html'
     pk_url_kwarg = 'product_id'
-    required_role = Profile.ROLE_MARKET_SELLER
+
+    def dispatch(self, request, *args, **kwargs):
+        if not user_is_market_seller(request.user):
+            return redirect('accounts:permission_denied')
+        return super().dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
         return Product.objects.filter(owner=self.request.user.profile)
@@ -133,8 +148,10 @@ def cart(request):
 
 
 @login_required
-@role_required(Profile.ROLE_MARKET_SELLER)
 def transactions_list(request):
+    if not user_is_market_seller(request.user):
+        return redirect('accounts:permission_denied')
+
     transactions = Transaction.objects.select_related(
         'product',
         'product__owner',
