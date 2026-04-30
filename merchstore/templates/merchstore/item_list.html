@@ -5,14 +5,46 @@
 {% block content %}
     <h1>Merchandise Items</h1>
 
+    <p><a href="{% url 'merchstore:item_create' %}">Add a product</a></p>
+
+    {% if user_products %}
+        <section>
+            <h2>Your Products</h2>
+            <ul>
+                {% for item in user_products %}
+                    <li>
+                        <article>
+                            <h3><a href="{% url 'merchstore:item_detail' item.id %}">{{ item.name }}</a></h3>
+                            {% if item.product_image %}
+                                <img src="{{ item.product_image.url }}" alt="{{ item.name }}" width="160">
+                            {% endif %}
+                            <p><strong>Type:</strong> {{ item.product_type.name|default:"Uncategorized" }}</p>
+                            <p><strong>Price:</strong> {{ item.price|floatformat:2 }}</p>
+                            <p><strong>Stock:</strong> {{ item.stock }}</p>
+                            <p><strong>Status:</strong> {{ item.status }}</p>
+                            <p>{{ item.description }}</p>
+                        </article>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+
+    <h2>All Products</h2>
     {% if items %}
         <ul>
             {% for item in items %}
                 <li>
                     <article>
-                        <h2><a href="{% url 'merchstore:item_detail' item.id %}">{{ item.name }}</a></h2>
+                        <h3><a href="{% url 'merchstore:item_detail' item.id %}">{{ item.name }}</a></h3>
+                        {% if item.product_image %}
+                            <img src="{{ item.product_image.url }}" alt="{{ item.name }}" width="160">
+                        {% endif %}
                         <p><strong>Type:</strong> {{ item.product_type.name|default:"Uncategorized" }}</p>
+                        <p><strong>Seller:</strong> {{ item.owner|default:"No seller" }}</p>
                         <p><strong>Price:</strong> {{ item.price|floatformat:2 }}</p>
+                        <p><strong>Stock:</strong> {{ item.stock }}</p>
+                        <p><strong>Status:</strong> {{ item.status }}</p>
                         <p>{{ item.description }}</p>
                     </article>
                 </li>

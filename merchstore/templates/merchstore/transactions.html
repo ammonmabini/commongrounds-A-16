@@ -1,0 +1,25 @@
+{% extends 'merchstore_base.html' %}
+
+{% block title %}Transactions{% endblock %}
+
+{% block content %}
+    <h1>Transactions</h1>
+    {% if grouped_transactions %}
+        {% for buyer, transactions in grouped_transactions.items %}
+            <section>
+                <h2>{{ buyer|default:"No buyer" }}</h2>
+                <ul>
+                    {% for transaction in transactions %}
+                        <li>
+                            {{ transaction.product.name }} -
+                            {{ transaction.amount }} item(s) -
+                            {{ transaction.status }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endfor %}
+    {% else %}
+        <p>No transactions yet.</p>
+    {% endif %}
+{% endblock %}

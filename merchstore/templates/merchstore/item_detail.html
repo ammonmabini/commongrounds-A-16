@@ -5,9 +5,29 @@
 {% block content %}
     <h1>{{ item.name }}</h1>
     <section>
+        {% if item.product_image %}
+            <img src="{{ item.product_image.url }}" alt="{{ item.name }}" width="240">
+        {% endif %}
         <p><strong>Type:</strong> {{ item.product_type.name|default:"Uncategorized" }}</p>
+        <p><strong>Seller:</strong> {{ item.owner|default:"No seller" }}</p>
         <p><strong>Price:</strong> {{ item.price|floatformat:2 }}</p>
+        <p><strong>Stock:</strong> {{ item.stock }}</p>
+        <p><strong>Status:</strong> {{ item.status }}</p>
         <p>{{ item.description }}</p>
     </section>
+
+    {% if user.is_authenticated and item.owner == user.profile %}
+        <p><a href="{% url 'merchstore:item_update' item.id %}">Edit product</a></p>
+    {% else %}
+        <section>
+            <h2>Buy this product</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" {% if item.stock == 0 %}disabled{% endif %}>Buy</button>
+            </form>
+        </section>
+    {% endif %}
+
     <p><a href="{% url 'merchstore:item_list' %}">Back to items list</a></p>
 {% endblock %}

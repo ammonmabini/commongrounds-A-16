@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'diyprojects',
     'commissions',
     'bookclub',
-    'merchstore',
+    'merchstore.apps.MerchstoreConfig',
     'localevents',
 ]
 
