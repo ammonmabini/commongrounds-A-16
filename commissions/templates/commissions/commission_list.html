@@ -1,20 +1,106 @@
 {% extends 'commissions_base.html' %}
 
-{% block header %}
-    <h1>Commission Requests</h1>
-{% endblock %}
+{% block title %}Commissions{% endblock %}
 
 {% block content %}
+<h1>Commission Requests</h1>
+
+{% if user.is_authenticated %}
+    <p>
+        <a href="{% url 'commissions:commission-create' %}">Create a New Commission</a>
+    </p>
+{% endif %}
+
+{% if created_commissions %}
+    <h2>Your Created Commissions</h2>
     <ul>
-      {% for c in commissions %}
-        <li>
-          <a href="/commissions/request/{{ c.id }}">{{ c.title }}</a>
-          — needs {{ c.people_required }} people
-          <br />
-          <small>Created: {{ c.created_on }}</small>
-        </li>
-      {% empty %}
-        <li>No commission requests yet.</li>
-      {% endfor %}
+        {% for commission in created_commissions %}
+            <li>
+                <a href="{% url 'commissions:commission-detail' commission.pk %}">
+                    {{ commission.title }}
+                </a>
+                <br>
+
+                Status: {{ commission.status }}
+                <br>
+
+                Type:
+                {% if commission.type %}
+                    {{ commission.type.name }}
+                {% else %}
+                    No type
+                {% endif %}
+                <br>
+
+                Created On: {{ commission.created_on }}
+            </li>
+        {% endfor %}
     </ul>
+{% endif %}
+
+{% if applied_commissions %}
+    <h2>Commissions You Applied To</h2>
+    <ul>
+        {% for commission in applied_commissions %}
+            <li>
+                <a href="{% url 'commissions:commission-detail' commission.pk %}">
+                    {{ commission.title }}
+                </a>
+                <br>
+
+                Status: {{ commission.status }}
+                <br>
+
+                Type:
+                {% if commission.type %}
+                    {{ commission.type.name }}
+                {% else %}
+                    No type
+                {% endif %}
+                <br>
+
+                Created On: {{ commission.created_on }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<h2>All Commissions</h2>
+
+{% if all_commissions %}
+    <ul>
+        {% for commission in all_commissions %}
+            <li>
+                <a href="{% url 'commissions:commission-detail' commission.pk %}">
+                    {{ commission.title }}
+                </a>
+                <br>
+
+                Status: {{ commission.status }}
+                <br>
+
+                Maker:
+                {% if commission.maker.display_name %}
+                    {{ commission.maker.display_name }}
+                {% else %}
+                    {{ commission.maker.user.username }}
+                {% endif %}
+                <br>
+
+                Type:
+                {% if commission.type %}
+                    {{ commission.type.name }}
+                {% else %}
+                    No type
+                {% endif %}
+                <br>
+
+                Created On: {{ commission.created_on }}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No commissions available.</p>
+{% endif %}
+
 {% endblock %}

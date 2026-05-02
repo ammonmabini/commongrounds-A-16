@@ -1,0 +1,54 @@
+{% extends 'commissions_base.html' %}
+
+{% block title %}
+    {% if object %}
+        Edit Commission
+    {% else %}
+        Create Commission
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<h1>
+    {% if object %}
+        Edit Commission
+    {% else %}
+        Create Commission
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <h2>Jobs</h2>
+
+    {{ job_formset.management_form }}
+
+    {% if job_formset.non_form_errors %}
+        <div>
+            {{ job_formset.non_form_errors }}
+        </div>
+    {% endif %}
+
+    {% for subform in job_formset %}
+        <fieldset>
+            {{ subform.as_p }}
+        </fieldset>
+        <hr>
+    {% endfor %}
+
+    <button type="submit">
+        {% if object %}
+            Save Changes
+        {% else %}
+            Create Commission
+        {% endif %}
+    </button>
+</form>
+
+<p>
+    <a href="{% url 'commissions:commission-list' %}">Back to Commissions</a>
+</p>
+{% endblock %}

@@ -1,18 +1,111 @@
 {% extends 'commissions_base.html' %}
 
-{% block header %}
-  <h3>Commission Details</h3>
-    <h1>{{ commission.title }}</h1> {% endblock %}
+{% block title %}{{ object.title }}{% endblock %}
 
 {% block content %}
+<h1>{{ object.title }}</h1>
 
-    <p><strong>People required:</strong> {{ commission.people_required }}</p>
-    <p><strong>Description:</strong> {{ commission.description }}</p>
+<p><strong>Description:</strong> {{ object.description }}</p>
 
+<p>
+    <strong>Type:</strong>
+    {% if object.type %}
+        {{ object.type.name }}
+    {% else %}
+        No type
+    {% endif %}
+</p>
+
+<p>
+    <strong>Maker:</strong>
+    {% if object.maker.display_name %}
+        {{ object.maker.display_name }}
+    {% else %}
+        {{ object.maker.user.username }}
+    {% endif %}
+</p>
+
+<p><strong>Status:</strong> {{ object.status }}</p>
+<p><strong>People Required:</strong> {{ object.people_required }}</p>
+<p><strong>Created On:</strong> {{ object.created_on }}</p>
+<p><strong>Updated On:</strong> {{ object.updated_on }}</p>
+
+<h2>Commission Summary</h2>
+<p><strong>Total Manpower Required:</strong> {{ summary.total_manpower }}</p>
+<p><strong>Open Manpower:</strong> {{ summary.open_manpower }}</p>
+
+{% if user.is_authenticated and object.maker.user == user %}
     <p>
-      <strong>Created:</strong> {{ commission.created_on }}<br />
-      <strong>Updated:</strong> {{ commission.updated_on }}
+        <a href="{% url 'commissions:commission-update' object.pk %}">Edit this commission</a>
     </p>
+{% endif %}
 
-    <p><a href="/commissions/requests">Back to list</a></p>
+<h2>Jobs Needed</h2>
+
+{% if jobs %}
+    <ul>
+        {% for job_row in jobs %}
+            <li>
+                <p><strong>Role:</strong> {{ job_row.job.role }}</p>
+                <p><strong>Status:</strong> {{ job_row.job.status }}</p>
+                <p><strong>Manpower Required:</strong> {{ job_row.job.manpower_required }}</p>
+                <p><strong>Accepted Applications:</strong> {{ job_row.accepted_count }}</p>
+
+                {% if user.is_authenticated %}
+                    {% if object.maker.user != user %}
+                        {% if job_row.already_applied %}
+                            <p>You already applied to this job.</p>
+                        {% else %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="job_id" value="{{ job_row.job.pk }}">
+
+                                <button
+                                    type="submit"
+                                    {% if job_row.accepted_count >= job_row.job.manpower_required or job_row.job.status == 'Full' %}disabled{% endif %}
+                                >
+                                    Apply to Job
+                                </button>
+                            </form>
+                        {% endif %}
+                    {% else %}
+                        <p>You cannot apply to your own commission.</p>
+                    {% endif %}
+                {% else %}
+                    <p>
+                        <a href="{% url 'login' %}?next={{ request.path }}">Log in to apply</a>
+                    </p>
+                {% endif %}
+
+                {% if job_row.applications %}
+                    <h3>Applications</h3>
+
+                    <ul>
+                        {% for application in job_row.applications %}
+                            <li>
+                                Applicant:
+                                {% if application.applicant.display_name %}
+                                    {{ application.applicant.display_name }}
+                                {% else %}
+                                    {{ application.applicant.user.username }}
+                                {% endif %}
+
+                                |
+                                Status: {{ application.status }}
+                                |
+                                Applied On: {{ application.applied_on }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobs have been added for this commission yet.</p>
+{% endif %}
+
+<p>
+    <a href="{% url 'commissions:commission-list' %}">Back to Commissions</a>
+</p>
 {% endblock %}
