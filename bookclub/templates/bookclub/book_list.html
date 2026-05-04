@@ -4,15 +4,43 @@
 {% block title %}Book List{% endblock %}
 
 {% block header %}
-    <h2>List of Books and Genres</h2>
+    <h1>Book Club</h1>
 {% endblock %}
 {% block content %}
-    <ul>
-        {% for genre in genre_list %}
-            <h3>{{ genre.name }}</h2>
-            {% for book in genre.books.all %}
-                <li><a href='{{ book.get_absolute_url }}'>{{ book.title }}</a></li>
+        {% if request.user.is_authenticated %} 
+            <h2>Books You Contributed</h2>
+            {% if contributed_books|length == 0 %}
+            <ul>You have not contributed any books.</ul>
+            {% endif %}
+            {% for book in contributed_books %}
+                <ul><h4><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h4></ul>
             {% endfor %}
-        {% endfor %}
-    </ul>
+
+            <h2>Books You Bookmarked</h2>
+            {% if bookmarked_books|length == 0 %}
+            <ul>You have not bookmarked any books.</ul>
+            {% endif %}
+            {% for book in bookmarked_books %}
+                <ul><h4><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h4></ul>
+            {% endfor %}
+        
+            <h2>Books You Reviewed</h2>
+            {% if reviewed_books|length == 0 %}
+            <ul>You have not reviewed any books.</ul>
+            {% endif %}
+            {% for book in reviewed_books %}
+                <ul><h4><a href="{{ book.get_absolute_url }}">{{ book.title }}</a></h4></ul>
+            {% endfor %} 
+
+            <h2>Other Books</h2>
+            {% for book in all_books %}
+                <ul><h4><a href='{{ book.get_absolute_url }}'>{{ book.title }}</a></h4></ul>
+            {% endfor %}
+        {% else %}
+            <h2>All Books</h2>
+            {% for book in all_books %}
+                <h4><a href='{{ book.get_absolute_url }}'>{{ book.title }}</a></h4>
+            {% endfor %}
+        {% endif %}
+        <a href="{% url 'bookclub:add' %}">Add a Book</a>
 {% endblock %}

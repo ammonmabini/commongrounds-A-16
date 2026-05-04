@@ -1,0 +1,27 @@
+{% extends 'bookclub_base.html' %}
+{% load static %}
+
+{% block title %}Borrow Book{% endblock %}
+
+{% block header %}
+    <h1>Borrow {{ book.title }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% if book.available_to_borrow %}
+        <ul>
+            <li><b>Author: </b>{{ book.author }}</li>
+            <li><b>Genre: </b>{{ book.genre }}</li>
+            <li><b>Synopsis: </b>{{ book.synoposis }}</li>
+        </ul>
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p><b>NOTE: The return date will be automatically set to 2 weeks after your borrow date.</b></p>
+            <button type="submit">Confirm Borrow</button>
+        </form>
+    {% else %}
+    <h3>This book cannot be borrowed at this time.</h3>
+    {% endif %}
+{% endblock %}

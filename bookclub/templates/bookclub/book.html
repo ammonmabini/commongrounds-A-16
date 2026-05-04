@@ -9,9 +9,62 @@
 {% block content %}
     <ul>
         <li><b>Genre: </b>{{ book.genre.name }}</li>
+        <li><b>Synopsis: </b>{{ book.synopsis }}</b></li>
         <li><b>Author: </b>{{ book.author }}</li>
         <li><b>Year Published: </b>{{ book.publication_year }}</li>
         <li><b>Created on: </b>{{ book.created_on }}</li>
         <li><b>Updated on: </b>{{ book.updated_on }}</li>
+        <li><b>Contributor: </b>{{ book.contributor }}</li>
+        <br>
+        {% if book.available_to_borrow %}
+            {% if is_borrowed %}
+            <p>You have borrowed this book on <b>{{ borrow.date_borrowed }}</b>, please return on or before <b>{{ borrow.date_to_return }}</b></p>
+            {% else %}
+            <b>This book is available to be borrowed</b>
+            <br>
+            <a href="{% url 'bookclub:borrow' book.pk %}">Borrow</a>
+            {% endif %}
+            {% else %}
+            <b>This book is currently unavailable to be borrowed</b>
+        {% endif %}
     </ul>
+
+    {% if request.user.is_authenticated %}
+            <form method="post" action="{% url 'bookclub:bookmark' book.pk %}">
+                {% csrf_token %}
+                {% if is_bookmarked %}
+                    <button type="submit">Remove Bookmark</button>
+                {% else %}
+                    <button type="submit">Bookmark</button>
+                {% endif %}
+            </form>
+            <p>Bookmarks: {{ bookmark_count }}</p>
+    {% endif %}
+    
+    {% if is_contributor %}
+        <a href="{% url 'bookclub:edit' book.pk %}">Edit Entry</a>
+    {% endif %}
+
+
+    <h3>Leave a Review:</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ review_form.as_p }}
+        <button type="submit">Submit Review</button>
+    </form>
+    <br>
+    <h3>User Reviews:</h3>
+    {% for review in reviews %}
+        <ul>
+            <h4>{% if review.user_reviewer %}
+            User: {{ review.user_reviewer.display_name }}
+                {% else %}
+            User: {{ review.anon_reviewer }}
+                {% endif %} 
+            </h4>
+            <ul><h5>"{{ review.title }}"</h5>
+            <p>{{ review.comment }}</p></ul>
+            <br>
+        </ul>
+    {% endfor %}
 {% endblock %}
