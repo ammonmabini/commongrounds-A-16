@@ -29,10 +29,13 @@ class BookDetailView(DetailView):
 
         if self.request.user.is_authenticated:
             profile = self.request.user.profile
+            is_bookmarked = book.bookmarks.filter(profile=profile).exists()
+            is_borrowed = book.borrowers.filter(borrower=profile).exists()
+            borrow = book.borrowers.filter(borrower=profile).first()
             context['is_contributor'] = book.contributor == profile
-            context['is_bookmarked'] = book.bookmarks.filter(profile=profile).exists()
-            context['is_borrowed'] = book.borrowers.filter(borrower=profile).exists()
-            context['borrow'] = book.borrowers.filter(borrower=profile).first()
+            context['is_bookmarked'] = is_bookmarked
+            context['is_borrowed'] = is_borrowed
+            context['borrow'] = borrow
 
         return context
 
@@ -51,7 +54,7 @@ class BookDetailView(DetailView):
 
             review.save()
             return redirect('bookclub:book', pk=book.pk)
-        
+
         context = self.get_context_data()
         context['review_form'] = form
         return render(request, self.template_name, context)
@@ -94,23 +97,23 @@ class BookCreateView(LoginRequiredMixin, CreateView):
         if request.user.profile.role != Profile.ROLE_BOOK_CONTRIBUTOR:
             return redirect('bookclub:books')
         return super().get(request, *args, **kwargs)
-    
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['form'].fields['contributor'].disabled = True
         return context
-    
+
     def post(self, request, *args, **kwargs):
         if request.user.profile.role != Profile.ROLE_BOOK_CONTRIBUTOR:
             return redirect('bookclub:books')
-        
+
         form = BookForm(request.POST)
         if form.is_valid():
             book = form.save(commit=False)
             book.contributor = request.user.profile
             book.save()
             return redirect('bookclub:book', pk=book.pk)
-        
+
         return render(request, self.template_name, {'form': form})
 
 
@@ -182,9 +185,10 @@ class BookBorrowView(FormView):
         form = BorrowForm(request.POST)
 
         if form.is_valid():
+            two_weeks = datetime.timedelta(weeks=2)
             borrow = form.save(commit=False)
             borrow.book = book
-            borrow.date_to_return = borrow.date_borrowed + datetime.timedelta(weeks=2)
+            borrow.date_to_return = borrow.date_borrowed + two_weeks
 
             if request.user.is_authenticated:
                 borrow.borrower = request.user.profile
