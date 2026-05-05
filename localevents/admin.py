@@ -14,6 +14,9 @@ class EventAdmin(admin.ModelAdmin):
                 'description',
                 'location',
                 ('start_time', 'end_time'),
+                'event_image',
+                'event_capacity',
+                'status',
             ]
         }),
     ]
