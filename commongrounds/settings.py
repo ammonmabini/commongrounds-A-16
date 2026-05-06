@@ -29,11 +29,12 @@ SECRET_KEY = os.getenv('DJANGO_SECRET', 'dev-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
 
-ALLOWED_HOSTS = ["brave-rejoicing-production.up.railway.app"]
+ALLOWED_HOSTS = ["*"]
+    #"brave-rejoicing-production.up.railway.app"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://brave-rejoicing-production.up.railway.app"
-]
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://brave-rejoicing-production.up.railway.app"
+# ]
 
 # Application definition
 

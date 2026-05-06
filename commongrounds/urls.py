@@ -18,14 +18,10 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-from django.http import HttpResponse
 
 from accounts import views as accounts_views
 
 urlpatterns = [
-    # Return a 204 for favicon requests to avoid noisy Not Found logs when
-    # no favicon is provided. Replace with a real static favicon if desired.
-    path('favicon.ico', lambda request: HttpResponse(status=204)),
     path('', accounts_views.home, name='home'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
