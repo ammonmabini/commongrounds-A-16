@@ -1,15 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Permission Denied</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Common Grounds</a>
+            <a href="{% url 'commissions:commission-list' %}">Commissions</a>
+        </nav>
+    </header>
+
     <main>
-        <h1>Permission Denied</h1>
-        <p>Your account does not have permission to access this page.</p>
-        <p><a href="{% url 'home' %}">Back to home</a></p>
+        <section class="auth-box">
+            <h1>Permission Denied</h1>
+            <p>Your account does not have permission to access this page.</p>
+            <p><a href="{% url 'home' %}">Back to home</a></p>
+        </section>
     </main>
 </body>
 </html>

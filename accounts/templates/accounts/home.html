@@ -1,33 +1,85 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Common Grounds</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-<body>
-    <main>
-        <h1>Common Grounds</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'merchstore:item_list' %}">Merchandise Store</a></li>
-                <li><a href="/bookclub/books">Book Club</a></li>
-                <li><a href="/localevents/events">Local Events</a></li>
-                <li><a href="/diyprojects/projects">DIY Projects</a></li>
-                <li><a href="/commissions/">Commissions</a></li>
-            </ul>
-        </nav>
 
-        {% if user.is_authenticated %}
-            <p>Signed in as {{ user.profile.display_name|default:user.username }}.</p>
-            <p><a href="{% url 'accounts:profile_update' user.username %}">Edit profile</a></p>
-            <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit">Log out</button>
-            </form>
-        {% else %}
-            <p><a href="{% url 'login' %}">Log in</a> or <a href="{% url 'accounts:register' %}">register</a>.</p>
-        {% endif %}
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Common Grounds</a>
+            <a href="{% url 'commissions:commission-list' %}">Commissions</a>
+            <a href="{% url 'merchstore:item_list' %}">Merchstore</a>
+            <a href="{% url 'bookclub:books' %}">Book Club</a>
+            <a href="{% url 'localevents:event_list' %}">Local Events</a>
+            <a href="{% url 'diyprojects:project-list' %}">DIY Projects</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'accounts:profile_update' user.username %}">Profile</a>
+            {% else %}
+                <a href="{% url 'login' %}">Log in</a>
+                <a href="{% url 'accounts:register' %}">Register</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        <section class="home-box">
+            <h1>Common Grounds</h1>
+            <p class="small-muted">
+                A shared space for hobbies, projects, events, books, products, and commission requests.
+            </p>
+
+            {% if user.is_authenticated %}
+                <p>Signed in as {{ user.profile.display_name|default:user.username }}.</p>
+
+                <div class="actions">
+                    <a class="button" href="{% url 'accounts:profile_update' user.username %}">Edit Profile</a>
+
+                    <form method="post" action="{% url 'logout' %}" style="margin: 0;">
+                        {% csrf_token %}
+                        <button type="submit">Log out</button>
+                    </form>
+                </div>
+            {% else %}
+                <div class="actions">
+                    <a class="button" href="{% url 'login' %}">Log in</a>
+                    <a class="button" href="{% url 'accounts:register' %}">Register</a>
+                </div>
+            {% endif %}
+
+            <div class="home-grid">
+                <a class="home-card" href="{% url 'commissions:commission-list' %}">
+                    <strong>Commissions</strong>
+                    <span>Request or apply for creative work.</span>
+                </a>
+
+                <a class="home-card" href="{% url 'merchstore:item_list' %}">
+                    <strong>Merchandise Store</strong>
+                    <span>Browse products from the community.</span>
+                </a>
+
+                <a class="home-card" href="{% url 'bookclub:books' %}">
+                    <strong>Book Club</strong>
+                    <span>Explore shared books and genres.</span>
+                </a>
+
+                <a class="home-card" href="{% url 'localevents:event_list' %}">
+                    <strong>Local Events</strong>
+                    <span>Find events happening in the community.</span>
+                </a>
+
+                <a class="home-card" href="{% url 'diyprojects:project-list' %}">
+                    <strong>DIY Projects</strong>
+                    <span>Discover projects and ideas.</span>
+                </a>
+            </div>
+        </section>
     </main>
 </body>
 </html>

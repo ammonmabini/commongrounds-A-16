@@ -1,13 +1,25 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{% block title %}Book Club{% endblock %}</title>
-        {% block styles %}{% endblock %}
-    </head>
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Book Club{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
     <header>
         <nav>
-            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'home' %}">Common Grounds</a>
+            <a href="{% url 'bookclub:books' %}">Book Club</a>
+            <a href="{% url 'commissions:commission-list' %}">Commissions</a>
+            <a href="{% url 'merchstore:item_list' %}">Merchstore</a>
+            <a href="{% url 'localevents:event_list' %}">Local Events</a>
+            <a href="{% url 'diyprojects:project-list' %}">DIY Projects</a>
+
             {% if user.is_authenticated %}
                 <a href="{% url 'accounts:profile_update' user.username %}">Profile</a>
             {% else %}
@@ -16,9 +28,10 @@
             {% endif %}
         </nav>
     </header>
-    
-    <body>
+
+    <main>
         {% block header %}{% endblock %}
         {% block content %}{% endblock %}
-    </body>
+    </main>
+</body>
 </html>

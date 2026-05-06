@@ -1,34 +1,9 @@
 from django.shortcuts import get_object_or_404, redirect, render
-from django.http import HttpResponse
 from .models import Event, EventSignup
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import EventCreateForm, EventUpdateForm, GuestEventSignupForm
-
-
-def index(request):
-    return HttpResponse('Hello World! This came from the index view')
-
-
-def event_list(request):
-    event = Event.objects.all()
-    return render(request, 'localevents/event_list.html', {
-        "event": event,
-    })
-
-
-def event_detail(request, event_title):
-    event = Event.objects.get(title=event_title)
-    return render(request, 'localevents/event_detail.html', {
-        "event": event,
-    })
-
-def event_create(request, event_title):
-    event = Event.objects.get(title=event_title)
-    return render(request, 'localevents/event_create.html', {
-        "event": event,
-    })
 
 
 class EventListView(ListView):
