@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
+import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -27,14 +29,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET', 'dev-secret-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["commongrounds-a-16-wjmbu.ondigitalocean.app"]
+
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+
     #"brave-rejoicing-production.up.railway.app"]
 
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://brave-rejoicing-production.up.railway.app"
-# ]
+CSRF_TRUSTED_ORIGINS = ["https://commongrounds-a-16-wjmbu.ondigitalocean.app"]
+
 
 # Application definition
 
@@ -55,7 +59,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,25 +90,18 @@ WSGI_APPLICATION = 'commongrounds.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-USE_POSTGRES = os.getenv('USE_POSTGRES', 'False').lower() in ('1', 'true', 'yes', 'on')
-
-if USE_POSTGRES:
+if DEVELOPMENT_MODE is True:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('PGDATABASE', ''),
-            'USER': os.getenv('PGUSER', ''),
-            'PASSWORD': os.getenv('PGPASSWORD', ''),
-            'HOST': os.getenv('PGHOST', 'localhost'),
-            'PORT': os.getenv('PGPORT', '5432'),
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
-else:
+elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
+    if os.getenv("DATABASE_URL", None) is None:
+        raise Exception("DATABASE_URL environment variable not defined")
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
     }
 
 
@@ -155,3 +151,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
