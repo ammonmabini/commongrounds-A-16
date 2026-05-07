@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import MinValueValidator, MaxValueValidator
 from accounts.models import Profile
 
 
@@ -11,8 +12,8 @@ class ProjectCategory(models.Model):
         ordering = ['name']
         verbose_name_plural = 'Project Categories'
 
-    def __str__(self):
-        return self.name
+    def __str__(self) -> str:
+        return str(self.name)
 
 
 class Project(models.Model):
@@ -37,8 +38,8 @@ class Project(models.Model):
     class Meta:
         ordering = ['-created_on']
 
-    def __str__(self):
-            return self.title
+    def __str__(self) -> str:
+        return str(self.title)
 
     def get_absolute_url(self):
         return reverse('diyprojects:project-detail', args=[self.pk])
@@ -72,8 +73,8 @@ class Favorite(models.Model):
         default=BACKLOG,
     )
 
-    def __str__(self):
-        return f'{self.profile} favorited {self.project}'
+    def __str__(self) -> str:
+        return str(f'{self.profile} favorited {self.project}')
 
 
 class ProjectReview(models.Model):
@@ -93,8 +94,8 @@ class ProjectReview(models.Model):
         blank=True,
     )
 
-    def __str__(self):
-        return f'Review for {self.project}'
+    def __str__(self) -> str:
+        return str(f'Review for {self.project}')
 
 
 class ProjectRating(models.Model):
@@ -108,7 +109,9 @@ class ProjectRating(models.Model):
         on_delete=models.CASCADE,
         related_name='project_ratings',
     )
-    score = models.IntegerField()
+    score = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(10)]
+    )
 
-    def __str__(self):
-        return f'{self.project}: {self.score}/10'
+    def __str__(self) -> str:
+        return str(f'{self.project}: {self.score}/10')
