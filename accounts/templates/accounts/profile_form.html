@@ -1,19 +1,40 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Common Grounds</a>
+            <a href="{% url 'commissions:commission-list' %}">Commissions</a>
+            <a href="{% url 'merchstore:item_list' %}">Merchstore</a>
+            <a href="{% url 'bookclub:books' %}">Book Club</a>
+            <a href="{% url 'localevents:event_list' %}">Local Events</a>
+            <a href="{% url 'diyprojects:project-list' %}">DIY Projects</a>
+        </nav>
+    </header>
+
     <main>
-        <h1>Edit Profile</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Save</button>
-        </form>
-        <p><a href="{% url 'home' %}">Back to home</a></p>
+        <section class="auth-box">
+            <h1>Edit Profile</h1>
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Save</button>
+            </form>
+
+            <p>
+                <a href="{% url 'home' %}">Back to home</a>
+            </p>
+        </section>
     </main>
 </body>
 </html>

@@ -1,16 +1,51 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-        <title> {% block title %} Commission Requests {% endblock %}</title>
-        {% block styles %} {% endblock %}
-    </head>
+{% load static %}
 
-    <body>
-        {% block header %} {% endblock %}
-        <div id="content">
-            {% block content %} {% endblock %}
-        </div>
-        {% block scripts %} {% endblock %}
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Commission Requests{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Common Grounds</a>
+            <a href="{% url 'commissions:commission-list' %}">Commissions</a>
+            <a href="{% url 'merchstore:item_list' %}">Merchstore</a>
+            <a href="{% url 'bookclub:books' %}">Book Club</a>
+            <a href="{% url 'localevents:event_list' %}">Local Events</a>
+            <a href="{% url 'diyprojects:project-list' %}">DIY Projects</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'accounts:profile_update' user.username %}">Profile</a>
+                <form method="post" action="{% url 'logout' %}" style="margin: 0;">
+                    {% csrf_token %}
+                    <button type="submit">Log out</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Log in</a>
+                <a href="{% url 'accounts:register' %}">Register</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main>
+        {% if messages %}
+            <ul class="message-list">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% block header %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+
+    {% block scripts %}{% endblock %}
+</body>
 </html>

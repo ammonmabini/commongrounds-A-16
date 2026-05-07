@@ -1,15 +1,24 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Merchstore{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+
 <body>
     <header>
         <nav>
-            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'home' %}">Common Grounds</a>
             <a href="{% url 'merchstore:item_list' %}">Products</a>
+            <a href="{% url 'commissions:commission-list' %}">Commissions</a>
+            <a href="{% url 'bookclub:books' %}">Book Club</a>
+            <a href="{% url 'localevents:event_list' %}">Local Events</a>
+            <a href="{% url 'diyprojects:project-list' %}">DIY Projects</a>
+
             {% if user.is_authenticated %}
                 <a href="{% url 'merchstore:cart' %}">Cart</a>
                 <a href="{% url 'merchstore:transactions' %}">Transactions</a>
@@ -20,14 +29,16 @@
             {% endif %}
         </nav>
     </header>
+
     <main>
         {% if messages %}
-            <ul>
+            <ul class="message-list">
                 {% for message in messages %}
                     <li>{{ message }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
+
         {% block content %}{% endblock %}
     </main>
 </body>
