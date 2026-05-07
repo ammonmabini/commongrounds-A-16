@@ -23,7 +23,7 @@
     <p>Signups: {{ signup_count }} / {{ event.event_capacity }}</p>
 
     {% if user.is_authenticated %}
-        <form method="post" action="{% url 'localevents:event_signup' event.id %}">
+        <form method="post" action="{% url 'localevents:event_detail' event.id %}">
             {% csrf_token %}
             <button type="submit" {% if not can_signup %}disabled{% endif %}>Sign Up</button>
         </form>

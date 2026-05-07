@@ -10,7 +10,7 @@ class EventType(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('localevents:event_list', args=[str(self.name)])
+        return reverse('localevents:event_list')
 
     class Meta:
         ordering = ['name']

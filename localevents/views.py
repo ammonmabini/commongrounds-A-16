@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 from .models import Event, EventSignup
 from django.views.generic import CreateView, DetailView, ListView, UpdateView
 from django.views import View
@@ -68,6 +69,31 @@ class EventDetailView(DetailView):
         context['has_signed_up'] = has_signed_up
         context['can_signup'] = not is_owner and not is_full and not has_signed_up
         return context
+
+    def post(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        event = self.object
+
+        if not request.user.is_authenticated:
+            return redirect(f"{reverse('login')}?next={request.path}")
+
+        profile = getattr(request.user, 'profile', None)
+        if profile is None:
+            return redirect(event.get_absolute_url())
+
+        is_full = event.event_signup.count() >= event.event_capacity
+        is_owner = event.event_organizers.filter(organizer=profile).exists()
+        has_signed_up = event.event_signup.filter(user_registrant=profile).exists()
+
+        if is_full or is_owner or has_signed_up:
+            return redirect(event.get_absolute_url())
+
+        EventSignup.objects.get_or_create(
+            event=event,
+            user_registrant=profile,
+            defaults={'new_registrant': ''},
+        )
+        return redirect(event.get_absolute_url())
 
 class EventOrganizerRequiredMixin(LoginRequiredMixin, UserPassesTestMixin):
     raise_exception = False
@@ -153,20 +179,6 @@ class EventSignupView(View):
             return redirect(event.get_absolute_url())
 
         if request.user.is_authenticated:
-            profile = getattr(request.user, 'profile', None)
-
-            if profile is None:
-                return redirect(event.get_absolute_url())
-
-            is_owner = event.event_organizers.filter(organizer=profile).exists()
-            if is_owner:
-                return redirect(event.get_absolute_url())
-
-            EventSignup.objects.get_or_create(
-                event=event,
-                user_registrant=profile,
-                defaults={'new_registrant': ''},
-            )
             return redirect(event.get_absolute_url())
 
         from_detail_session_key = f'event_signup_from_detail_{event_id}'
