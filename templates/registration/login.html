@@ -8,7 +8,6 @@
     <title>Log In</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-
 <body>
     <header>
         <nav>
@@ -30,6 +29,10 @@
             <p>
                 No account yet?
                 <a href="{% url 'accounts:register' %}">Register here</a>.
+            </p>
+            <p>
+                Forgot your password?
+                <a href="{% url 'password_reset' %}">Reset it</a>.
             </p>
         </section>
     </main>
