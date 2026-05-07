@@ -35,7 +35,7 @@ ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split("
 
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-
+DATABASE_URL = 'sqlite:///db.sqlite3'
 # Application definition
 
 INSTALLED_APPS = [

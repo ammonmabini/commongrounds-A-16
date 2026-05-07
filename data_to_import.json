@@ -1,0 +1,2303 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-05-04T11:58:48.616Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "janedoe",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-05-04T11:59:17.691Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "janedoe",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-05-04T11:59:36.584Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "4",
+    "object_repr": "johnsmith",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-05-04T12:00:01.056Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "johnsmith",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-05-04T14:20:19.496Z",
+    "user": 2,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "Social",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-05-04T14:20:22.169Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "1",
+    "object_repr": "Year-End Party: the name says it all ",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Category\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-05-05T09:11:46.502Z",
+    "user": 2,
+    "content_type": 15,
+    "object_id": "1",
+    "object_repr": "Fiction",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-05-05T09:12:00.760Z",
+    "user": 2,
+    "content_type": 15,
+    "object_id": "2",
+    "object_repr": "Non-Fiction",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2026-05-05T09:12:14.329Z",
+    "user": 2,
+    "content_type": 15,
+    "object_id": "3",
+    "object_repr": "Fantasy",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2026-05-05T09:12:30.761Z",
+    "user": 2,
+    "content_type": 15,
+    "object_id": "4",
+    "object_repr": "Science Fiction",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2026-05-05T09:12:43.479Z",
+    "user": 2,
+    "content_type": 15,
+    "object_id": "5",
+    "object_repr": "Mystery/Thriller",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-05-05T09:17:51.410Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "liamnavarro",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-05-05T09:19:03.909Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "5",
+    "object_repr": "liamnavarro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-05-05T09:20:20.779Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Liam Navarro",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Display name\", \"Email address\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-05-05T09:20:54.112Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Jane Doe",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Display name\", \"Email address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-05-05T09:21:48.422Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "6",
+    "object_repr": "sofiadelgado",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-05-05T09:22:34.778Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Sofia Delgado",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Display name\", \"Email address\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-05-05T09:23:05.562Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "7",
+    "object_repr": "ethanreyes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-05-05T09:23:25.861Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Ethan Reyes",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Display name\", \"Email address\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-05-05T09:23:45.462Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "8",
+    "object_repr": "mayasantos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-05-05T09:24:06.511Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Maya Santos",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Display name\", \"Email address\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-05-05T09:24:27.960Z",
+    "user": 2,
+    "content_type": 4,
+    "object_id": "9",
+    "object_repr": "danielcruz",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-05-05T09:24:46.127Z",
+    "user": 2,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "Daniel Cruz",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Display name\", \"Email address\", \"Role\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2026-05-05T09:26:46.420Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "To Kill a Mockingbird",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2026-05-05T09:27:44.394Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "The Great Gatsby",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2026-05-05T09:28:30.936Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "3",
+    "object_repr": "Pride and Prejudice",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2026-05-05T09:29:28.960Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "4",
+    "object_repr": "The Diary of a Young Girl",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2026-05-05T09:30:12.847Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "5",
+    "object_repr": "Sapiens: A Brief History of Humankind",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2026-05-05T09:30:55.813Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "6",
+    "object_repr": "Educated",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2026-05-05T09:31:38.695Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "7",
+    "object_repr": "Harry Potter and the Sorcerer’s Stone",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2026-05-05T09:32:15.006Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "8",
+    "object_repr": "The Hobbit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2026-05-05T09:32:57.109Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "9",
+    "object_repr": "The Name of the Wind",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2026-05-05T09:33:37.110Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "10",
+    "object_repr": "Dune",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2026-05-05T09:34:34.360Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "11",
+    "object_repr": "Ender’s Game",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2026-05-05T09:35:14.921Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "12",
+    "object_repr": "The Martian",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2026-05-05T09:35:51.377Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "13",
+    "object_repr": "The Girl with the Dragon Tattoo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2026-05-05T09:36:55.260Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "14",
+    "object_repr": "Gone Girl",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2026-05-05T09:37:29.391Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "15",
+    "object_repr": "The Da Vinci Code",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2026-05-05T09:38:40.104Z",
+    "user": 2,
+    "content_type": 23,
+    "object_id": "1",
+    "object_repr": "Bookmark object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2026-05-05T09:39:02.828Z",
+    "user": 2,
+    "content_type": 23,
+    "object_id": "2",
+    "object_repr": "Bookmark object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2026-05-05T09:42:14.342Z",
+    "user": 2,
+    "content_type": 24,
+    "object_id": "1",
+    "object_repr": "A Powerful Story About Justice",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2026-05-05T09:42:45.127Z",
+    "user": 2,
+    "content_type": 24,
+    "object_id": "2",
+    "object_repr": "A Fun Adventure Journey",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2026-05-05T09:43:03.186Z",
+    "user": 2,
+    "content_type": 24,
+    "object_id": "3",
+    "object_repr": "Survival Against All Odds",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2026-05-05T09:44:01.331Z",
+    "user": 2,
+    "content_type": 25,
+    "object_id": "1",
+    "object_repr": "Borrow object (1)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2026-05-05T09:48:27.345Z",
+    "user": 2,
+    "content_type": 20,
+    "object_id": "1",
+    "object_repr": "Social",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2026-05-05T09:48:37.104Z",
+    "user": 2,
+    "content_type": 20,
+    "object_id": "2",
+    "object_repr": "Sports",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2026-05-05T09:48:45.150Z",
+    "user": 2,
+    "content_type": 20,
+    "object_id": "3",
+    "object_repr": "Workshops",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2026-05-05T09:48:53.853Z",
+    "user": 2,
+    "content_type": 20,
+    "object_id": "4",
+    "object_repr": "Conferences",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2026-05-05T09:49:02.801Z",
+    "user": 2,
+    "content_type": 20,
+    "object_id": "5",
+    "object_repr": "Community Events",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2026-05-05T09:56:21.841Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "2",
+    "object_repr": "Welcome Night Mixer: A casual gathering for newcomers to meet and connect with others over snacks and music. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2026-05-05T09:57:53.773Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "3",
+    "object_repr": "Friday Hangout Night: Chill evening with games, music, and open conversations to unwind the week. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2026-05-05T09:59:07.889Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "4",
+    "object_repr": "Inter-Department Basketball Game: Friendly basketball competition between departments showcasing teamwork and skill. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2026-05-05T10:00:05.622Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "5",
+    "object_repr": "Morning Fitness Run: Community run to promote health and endurance for all participants. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2026-05-05T10:01:28.759Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "6",
+    "object_repr": "Intro to Web Development: Hands-on workshop covering HTML, CSS, and basic JavaScript for beginners. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2026-05-05T10:03:29.151Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "7",
+    "object_repr": "Creative Writing Basics: Learn storytelling techniques and improve your writing skills through guided exercises. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2026-05-05T10:04:54.803Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "8",
+    "object_repr": "Tech Innovation Summit: Talks and presentations on emerging technologies and digital transformation. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2026-05-05T10:06:19.239Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "9",
+    "object_repr": "Education Futures Forum: Discussions on modern teaching methods and the future of learning systems. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2026-05-05T10:07:21.722Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "10",
+    "object_repr": "Barangay Clean-Up Drive: Community effort to clean public spaces and promote environmental awareness. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2026-05-05T10:08:23.639Z",
+    "user": 2,
+    "content_type": 19,
+    "object_id": "11",
+    "object_repr": "Charity Food Fair: Food stalls and donations to support local families in need. ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 60,
+  "fields": {
+    "action_time": "2026-05-05T10:10:44.682Z",
+    "user": 2,
+    "content_type": 17,
+    "object_id": "1",
+    "object_repr": "Apparel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 61,
+  "fields": {
+    "action_time": "2026-05-05T10:10:55.616Z",
+    "user": 2,
+    "content_type": 17,
+    "object_id": "2",
+    "object_repr": "Accessories",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 62,
+  "fields": {
+    "action_time": "2026-05-05T10:11:04.481Z",
+    "user": 2,
+    "content_type": 17,
+    "object_id": "3",
+    "object_repr": "Stationery",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 63,
+  "fields": {
+    "action_time": "2026-05-05T10:11:13.065Z",
+    "user": 2,
+    "content_type": 17,
+    "object_id": "4",
+    "object_repr": "Electronics",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 64,
+  "fields": {
+    "action_time": "2026-05-05T10:11:22.514Z",
+    "user": 2,
+    "content_type": 17,
+    "object_id": "5",
+    "object_repr": "Collectibles",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 65,
+  "fields": {
+    "action_time": "2026-05-05T10:14:40.803Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "1",
+    "object_repr": "Campus Hoodie",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 66,
+  "fields": {
+    "action_time": "2026-05-05T10:15:41.375Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "2",
+    "object_repr": "Classic White Shirt",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 67,
+  "fields": {
+    "action_time": "2026-05-05T10:16:27.718Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "3",
+    "object_repr": "Sports Jacket",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 68,
+  "fields": {
+    "action_time": "2026-05-05T10:17:53.460Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "4",
+    "object_repr": "Logo Keychain",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 69,
+  "fields": {
+    "action_time": "2026-05-05T10:18:54.403Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "5",
+    "object_repr": "Canvas Tote Bag",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 70,
+  "fields": {
+    "action_time": "2026-05-05T10:20:24.651Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "6",
+    "object_repr": "Wristband Pack",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 71,
+  "fields": {
+    "action_time": "2026-05-05T10:36:36.673Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "7",
+    "object_repr": "Study Notebook",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 72,
+  "fields": {
+    "action_time": "2026-05-05T10:37:55.559Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "8",
+    "object_repr": "Gel Pen Set",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 73,
+  "fields": {
+    "action_time": "2026-05-05T10:45:24.533Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "9",
+    "object_repr": "Sticker Pack",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 74,
+  "fields": {
+    "action_time": "2026-05-05T11:03:22.363Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "10",
+    "object_repr": "Wireless Earbuds",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 75,
+  "fields": {
+    "action_time": "2026-05-05T11:06:12.838Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "11",
+    "object_repr": "USB Flash Drive (32GB)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 76,
+  "fields": {
+    "action_time": "2026-05-05T14:26:32.429Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "12",
+    "object_repr": "Portable Charger",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 77,
+  "fields": {
+    "action_time": "2026-05-05T14:27:33.949Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "13",
+    "object_repr": "Mini Figure Set",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 78,
+  "fields": {
+    "action_time": "2026-05-05T14:34:04.169Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "14",
+    "object_repr": "Event Poster Print",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 79,
+  "fields": {
+    "action_time": "2026-05-05T14:35:08.279Z",
+    "user": 2,
+    "content_type": 16,
+    "object_id": "15",
+    "object_repr": "Collector Badge Set",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 80,
+  "fields": {
+    "action_time": "2026-05-05T14:35:48.958Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "1",
+    "object_repr": "Portable Charger x1 for Ethan Reyes",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 81,
+  "fields": {
+    "action_time": "2026-05-05T14:35:58.286Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "2",
+    "object_repr": "Canvas Tote Bag x2 for Maya Santos",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 82,
+  "fields": {
+    "action_time": "2026-05-05T14:36:11.686Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "3",
+    "object_repr": "Sports Jacket x1 for Jane Doe",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 83,
+  "fields": {
+    "action_time": "2026-05-05T14:36:25.621Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "4",
+    "object_repr": "Collector Badge Set x4 for ammonmabini",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 84,
+  "fields": {
+    "action_time": "2026-05-05T14:36:43.537Z",
+    "user": 2,
+    "content_type": 18,
+    "object_id": "5",
+    "object_repr": "Wristband Pack x5 for johnsmith",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "merchstore_owner",
+    "first_name": "",
+    "last_name": "",
+    "email": "merchstore-owner@example.com",
+    "is_staff": false,
+    "is_active": false,
+    "date_joined": "2026-05-04T11:33:10.913Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$9rn4WFVct8jwjWvfEF7bOt$YKXzhQHNkO/0pk2oUkqgnIKG1QF28ePEzxmXteWr7qY=",
+    "last_login": "2026-05-06T15:23:20.999Z",
+    "is_superuser": true,
+    "username": "ammonmabini",
+    "first_name": "",
+    "last_name": "",
+    "email": "ramon.jr.mabini@student.ateneo.edu",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-04T11:56:38.996Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ijuE5lXNAPZ4YhgkliaFdu$6sfUs4d2M/YSLBXl9Xa+ZMbnu9loixP2agKXIqDtlO4=",
+    "last_login": "2026-05-06T16:04:22.108Z",
+    "is_superuser": false,
+    "username": "janedoe",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-04T11:58:48.378Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$1fKXFwFSf76N3yTjM36GC1$fHlCf+0vogixVnhVHcKjLhdoeLqTuOV7F4OiDP0J7zA=",
+    "last_login": "2026-05-04T14:19:14.711Z",
+    "is_superuser": false,
+    "username": "johnsmith",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-04T11:59:36.342Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$bHosenBVFHNEHDvR41vFpl$pw1Bxpw+yr2v9CyrrXwrXsrdtKJIT25ACr4bqYALyoE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "liamnavarro",
+    "first_name": "Liam",
+    "last_name": "Navarro",
+    "email": "liam@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T09:17:51Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ovqk98l3pBFjBKbamztWvc$qb4Iqnvqd0ZlFeaJjojcvHN+YOBDgrRcAS+xPw1MKo4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sofiadelgado",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T09:21:48.185Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$xMhtdy4wd6HS7yAJGVCFqk$+d0PfAd7hOjyVZSke9jQ0WwU6OyA3KUDr013e9WJw5I=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ethanreyes",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T09:23:05.324Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$v7KCc4rzwLYPTi79tuJiBg$HQZHdh4/enlVk+Qaa4N8K2/6ZkB3S74hx5gP3DzfoS0=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mayasantos",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T09:23:45.224Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$eJZ9OI73BwpFm7wa2nMTDR$vf68oEXNHutgsdybdd1stq+wIwdVBbr1KiAhvhrSoMc=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "danielcruz",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-05-05T09:24:27.723Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wc3wbtyhbe7gkuiihfpgxijvchu1905g",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlneJP5R0ucM1tq7xgHkSHFSIe5OIqWAdmbee4uA21rC1ngJE4mr6MTll0VMT66HoAfW-yzTXNdlivJI5GmbHGfi1-1s_w4KtrKvNemobU_Ja3KDMw44ckwWPLudAXTJoM6WeyCTB2UcOovggVhlzkp8vubgOBo:1wKBl6:jLG1A1IgMPyXr4-ENfncdDIW6uo4G5zR5Lut9n_Gewg",
+    "expire_date": "2026-05-19T09:08:04.950Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "wp0wneh8j1kjiltnljx5iv9wa1d3cxq6",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hDKwCAu3fcMZIahUjVtUtqV8e7apAvd_vfef6lE21rT1sqSRlEXBer0uzHlR5l2IHeabrPO87QuI-td0Qdtup-lPK-H-3dQqdVvnbGzhnnwAzskBMzZgx1cZ1xwTNjFABlESCgyCvgQrAhzwbPDKEa9P-skOCo:1wKejW:_0SgzCWDo-lLWsT-nsU0L76ECza0VRfn-rZidmPlZg0",
+    "expire_date": "2026-05-20T16:04:22.110Z"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "display_name": "Merchstore Owner",
+    "email_address": "merchstore-owner@example.com",
+    "role": "Market Seller"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "display_name": "ammonmabini",
+    "email_address": "ramon.jr.mabini@student.ateneo.edu",
+    "role": "Member"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 3,
+    "display_name": "Jane Doe",
+    "email_address": "jane@gmail.com",
+    "role": "Event Organizer"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "display_name": "johnsmith",
+    "email_address": "ramon.jr.mabini@student.ateneo.edu",
+    "role": "Member"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 5,
+  "fields": {
+    "user": 5,
+    "display_name": "Liam Navarro",
+    "email_address": "liam@gmail.com",
+    "role": "Book Contributor"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 6,
+  "fields": {
+    "user": 6,
+    "display_name": "Sofia Delgado",
+    "email_address": "sofia@gmail.com",
+    "role": "Book Contributor"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "display_name": "Ethan Reyes",
+    "email_address": "ethan@gmail.com",
+    "role": "Book Contributor"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 8,
+  "fields": {
+    "user": 8,
+    "display_name": "Maya Santos",
+    "email_address": "maya@gmail.com",
+    "role": "Book Contributor"
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 9,
+  "fields": {
+    "user": 9,
+    "display_name": "Daniel Cruz",
+    "email_address": "daniel@gmail.com",
+    "role": "Book Contributor"
+  }
+},
+{
+  "model": "bookclub.genre",
+  "pk": 1,
+  "fields": {
+    "name": "Fiction",
+    "description": "Made-up stories created from the author’s imagination (novels, short stories)."
+  }
+},
+{
+  "model": "bookclub.genre",
+  "pk": 2,
+  "fields": {
+    "name": "Non-Fiction",
+    "description": "Based on real facts, people, and events (biographies, history, self-help)."
+  }
+},
+{
+  "model": "bookclub.genre",
+  "pk": 3,
+  "fields": {
+    "name": "Fantasy",
+    "description": "Stories with magic, mythical creatures, and imaginary worlds."
+  }
+},
+{
+  "model": "bookclub.genre",
+  "pk": 4,
+  "fields": {
+    "name": "Science Fiction",
+    "description": "Focuses on futuristic technology, space, and scientific possibilities."
+  }
+},
+{
+  "model": "bookclub.genre",
+  "pk": 5,
+  "fields": {
+    "name": "Mystery/Thriller",
+    "description": "Centers on solving crimes, secrets, and suspenseful situations."
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 1,
+  "fields": {
+    "title": "To Kill a Mockingbird",
+    "genre": 1,
+    "contributor": 7,
+    "author": "Harper Lee",
+    "synopsis": "A young girl in the American South learns about racism and justice as her father defends a wrongly accused man.",
+    "publication_year": 1960,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:26:46.419Z",
+    "updated_on": "2026-05-05T09:26:46.419Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 2,
+  "fields": {
+    "title": "The Great Gatsby",
+    "genre": 1,
+    "contributor": 8,
+    "author": "F. Scott Fitzgerald",
+    "synopsis": "A mysterious millionaire throws lavish parties while secretly longing for a lost love.",
+    "publication_year": 1925,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:27:44.393Z",
+    "updated_on": "2026-05-05T09:27:44.393Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 3,
+  "fields": {
+    "title": "Pride and Prejudice",
+    "genre": 1,
+    "contributor": 9,
+    "author": "Jane Austen",
+    "synopsis": "Elizabeth Bennet navigates love, class, and misunderstandings with Mr. Darcy.",
+    "publication_year": 1813,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:28:30.935Z",
+    "updated_on": "2026-05-05T09:28:30.935Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 4,
+  "fields": {
+    "title": "The Diary of a Young Girl",
+    "genre": 2,
+    "contributor": 6,
+    "author": "Anne Frank",
+    "synopsis": "The real-life diary of a Jewish girl hiding during World War II.",
+    "publication_year": 1947,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:29:28.958Z",
+    "updated_on": "2026-05-05T09:29:28.958Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 5,
+  "fields": {
+    "title": "Sapiens: A Brief History of Humankind",
+    "genre": 2,
+    "contributor": 5,
+    "author": "Yuval Noah Harari",
+    "synopsis": "Explains how humans evolved and shaped the modern world.",
+    "publication_year": 2011,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:30:12.845Z",
+    "updated_on": "2026-05-05T09:30:12.845Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 6,
+  "fields": {
+    "title": "Educated",
+    "genre": 2,
+    "contributor": 7,
+    "author": "Tara Westover",
+    "synopsis": "A woman grows up in a strict family and pursues education despite many obstacles.",
+    "publication_year": 2018,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:30:55.811Z",
+    "updated_on": "2026-05-05T09:30:55.811Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 7,
+  "fields": {
+    "title": "Harry Potter and the Sorcerer’s Stone",
+    "genre": 3,
+    "contributor": 9,
+    "author": "J.K. Rowling",
+    "synopsis": "A boy discovers he is a wizard and begins his journey at a magical school.",
+    "publication_year": 1997,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:31:38.693Z",
+    "updated_on": "2026-05-05T09:31:38.693Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 8,
+  "fields": {
+    "title": "The Hobbit",
+    "genre": 3,
+    "contributor": 6,
+    "author": "J.R.R. Tolkien",
+    "synopsis": "A hobbit goes on an adventure to reclaim treasure from a dragon.",
+    "publication_year": 1937,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:32:15.004Z",
+    "updated_on": "2026-05-05T09:32:15.004Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 9,
+  "fields": {
+    "title": "The Name of the Wind",
+    "genre": 3,
+    "contributor": 7,
+    "author": "Patrick Rothfuss",
+    "synopsis": "A gifted young man tells the story of his rise to legend.",
+    "publication_year": 2007,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:32:57.107Z",
+    "updated_on": "2026-05-05T09:32:57.108Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 10,
+  "fields": {
+    "title": "Dune",
+    "genre": 4,
+    "contributor": 8,
+    "author": "Frank Herbert",
+    "synopsis": "A young nobleman navigates politics and survival on a desert planet.",
+    "publication_year": 1965,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:33:37.108Z",
+    "updated_on": "2026-05-05T09:33:37.108Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 11,
+  "fields": {
+    "title": "Ender’s Game",
+    "genre": 4,
+    "contributor": 5,
+    "author": "Orson Scott Card",
+    "synopsis": "A child genius is trained to lead humanity in a war against aliens.",
+    "publication_year": 1985,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:34:34.358Z",
+    "updated_on": "2026-05-05T09:34:34.358Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 12,
+  "fields": {
+    "title": "The Martian",
+    "genre": 4,
+    "contributor": 6,
+    "author": "Andy Weir",
+    "synopsis": "An astronaut stranded on Mars uses science to survive.",
+    "publication_year": 2011,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:35:14.920Z",
+    "updated_on": "2026-05-05T09:35:14.920Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 13,
+  "fields": {
+    "title": "The Girl with the Dragon Tattoo",
+    "genre": 5,
+    "contributor": 7,
+    "author": "Stieg Larsson",
+    "synopsis": "A journalist and hacker investigate a long-missing woman.",
+    "publication_year": 2005,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:35:51.376Z",
+    "updated_on": "2026-05-05T09:35:51.376Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 14,
+  "fields": {
+    "title": "Gone Girl",
+    "genre": 5,
+    "contributor": 8,
+    "author": "Gillian Flynn",
+    "synopsis": "A man becomes the main suspect when his wife disappears.",
+    "publication_year": 2012,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:36:55.258Z",
+    "updated_on": "2026-05-05T09:36:55.258Z"
+  }
+},
+{
+  "model": "bookclub.book",
+  "pk": 15,
+  "fields": {
+    "title": "The Da Vinci Code",
+    "genre": 5,
+    "contributor": 9,
+    "author": "Dan Brown",
+    "synopsis": "A professor uncovers hidden secrets while solving a murder.",
+    "publication_year": 2003,
+    "available_to_borrow": true,
+    "created_on": "2026-05-05T09:37:29.390Z",
+    "updated_on": "2026-05-05T09:37:29.390Z"
+  }
+},
+{
+  "model": "bookclub.bookreview",
+  "pk": 1,
+  "fields": {
+    "user_reviewer": 2,
+    "anon_reviewer": "",
+    "book": 1,
+    "title": "A Powerful Story About Justice",
+    "comment": "This book clearly shows the impact of racism and fairness through a child’s perspective. It’s emotional and easy to understand."
+  }
+},
+{
+  "model": "bookclub.bookreview",
+  "pk": 2,
+  "fields": {
+    "user_reviewer": 3,
+    "anon_reviewer": "",
+    "book": 8,
+    "title": "A Fun Adventure Journey",
+    "comment": "The story is exciting and full of adventure. The characters are interesting, and the journey keeps you engaged."
+  }
+},
+{
+  "model": "bookclub.bookreview",
+  "pk": 3,
+  "fields": {
+    "user_reviewer": 9,
+    "anon_reviewer": "",
+    "book": 12,
+    "title": "Survival Against All Odds",
+    "comment": "A very smart and intense story about surviving alone on Mars. It mixes science and humor really well."
+  }
+},
+{
+  "model": "bookclub.bookmark",
+  "pk": 1,
+  "fields": {
+    "profile": 2,
+    "book": 11,
+    "date_bookmarked": "2026-05-02"
+  }
+},
+{
+  "model": "bookclub.bookmark",
+  "pk": 2,
+  "fields": {
+    "profile": 8,
+    "book": 3,
+    "date_bookmarked": "2026-04-21"
+  }
+},
+{
+  "model": "bookclub.borrow",
+  "pk": 1,
+  "fields": {
+    "book": 14,
+    "borrower": 8,
+    "name": "Maya Santos",
+    "date_borrowed": "2026-05-05",
+    "date_to_return": "2026-05-11"
+  }
+},
+{
+  "model": "merchstore.producttype",
+  "pk": 1,
+  "fields": {
+    "name": "Apparel",
+    "description": "Clothing items like shirts, hoodies, jackets, and caps."
+  }
+},
+{
+  "model": "merchstore.producttype",
+  "pk": 2,
+  "fields": {
+    "name": "Accessories",
+    "description": "Wearables and add-ons like bags, pins, keychains, and bracelets."
+  }
+},
+{
+  "model": "merchstore.producttype",
+  "pk": 3,
+  "fields": {
+    "name": "Stationery",
+    "description": "School or office items like notebooks, pens, stickers, and planners."
+  }
+},
+{
+  "model": "merchstore.producttype",
+  "pk": 4,
+  "fields": {
+    "name": "Electronics",
+    "description": "Tech-related merch like headphones, USBs, and small gadgets."
+  }
+},
+{
+  "model": "merchstore.producttype",
+  "pk": 5,
+  "fields": {
+    "name": "Collectibles",
+    "description": "Limited-edition items like figurines, posters, and fan merch items."
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 1,
+  "fields": {
+    "name": "Campus Hoodie",
+    "product_type": 1,
+    "owner": 9,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.14.22PM.png",
+    "description": "Warm and comfy hoodie with minimalist university logo design.",
+    "price": "899.00",
+    "stock": 24,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 2,
+  "fields": {
+    "name": "Classic White Shirt",
+    "product_type": 1,
+    "owner": 7,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.15.34PM.png",
+    "description": "Soft cotton shirt perfect for everyday wear and events.",
+    "price": "299.00",
+    "stock": 50,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 3,
+  "fields": {
+    "name": "Sports Jacket",
+    "product_type": 1,
+    "owner": 3,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.16.19PM.png",
+    "description": "Lightweight jacket ideal for outdoor activities and sports events.",
+    "price": "1199.00",
+    "stock": 14,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 4,
+  "fields": {
+    "name": "Logo Keychain",
+    "product_type": 2,
+    "owner": 5,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.17.47PM.png",
+    "description": "Durable acrylic keychain featuring the official merch logo.",
+    "price": "99.00",
+    "stock": 100,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 5,
+  "fields": {
+    "name": "Canvas Tote Bag",
+    "product_type": 2,
+    "owner": 5,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.18.41PM.png",
+    "description": "Eco-friendly tote bag for books, groceries, or daily essentials.",
+    "price": "249.00",
+    "stock": 38,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 6,
+  "fields": {
+    "name": "Wristband Pack",
+    "product_type": 2,
+    "owner": 8,
+    "product_image": "",
+    "description": "Set of colorful silicone wristbands for casual wear.",
+    "price": "149.00",
+    "stock": 65,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 7,
+  "fields": {
+    "name": "Study Notebook",
+    "product_type": 3,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.36.29PM.png",
+    "description": "Lined notebook for school notes and daily journaling.",
+    "price": "79.00",
+    "stock": 120,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 8,
+  "fields": {
+    "name": "Gel Pen Set",
+    "product_type": 3,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.37.15PM.png",
+    "description": "Smooth-writing gel pens in assorted colors.",
+    "price": "59.00",
+    "stock": 200,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 9,
+  "fields": {
+    "name": "Sticker Pack",
+    "product_type": 3,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.45.17PM.png",
+    "description": "Fun decorative stickers for laptops, notebooks, and gadgets.",
+    "price": "49.00",
+    "stock": 150,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 10,
+  "fields": {
+    "name": "Wireless Earbuds",
+    "product_type": 4,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_6.46.29PM.png",
+    "description": "Compact earbuds with clear sound and long battery life.",
+    "price": "1499.00",
+    "stock": 20,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 11,
+  "fields": {
+    "name": "USB Flash Drive (32GB)",
+    "product_type": 4,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_7.06.06PM.png",
+    "description": "Portable storage for files, documents, and media.",
+    "price": "399.00",
+    "stock": 60,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 12,
+  "fields": {
+    "name": "Portable Charger",
+    "product_type": 4,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_10.26.25PM.png",
+    "description": "Power bank for charging devices on the go.",
+    "price": "999.00",
+    "stock": 29,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 13,
+  "fields": {
+    "name": "Mini Figure Set",
+    "product_type": 5,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_10.27.26PM.png",
+    "description": "Limited-edition character figures for collectors.",
+    "price": "799.00",
+    "stock": 10,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 14,
+  "fields": {
+    "name": "Event Poster Print",
+    "product_type": 5,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_10.33.53PM.png",
+    "description": "High-quality poster featuring exclusive merch artwork.",
+    "price": "199.00",
+    "stock": 45,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.product",
+  "pk": 15,
+  "fields": {
+    "name": "Collector Badge Set",
+    "product_type": 5,
+    "owner": 1,
+    "product_image": "merchstore/products/Screenshot_2026-05-05_at_10.35.01PM.png",
+    "description": "Set of enamel pins with rare merch designs.",
+    "price": "299.00",
+    "stock": 76,
+    "status": "Available"
+  }
+},
+{
+  "model": "merchstore.transaction",
+  "pk": 1,
+  "fields": {
+    "buyer": 7,
+    "product": 12,
+    "amount": 1,
+    "status": "To Pay",
+    "created_on": "2026-05-05T14:35:48.955Z"
+  }
+},
+{
+  "model": "merchstore.transaction",
+  "pk": 2,
+  "fields": {
+    "buyer": 8,
+    "product": 5,
+    "amount": 2,
+    "status": "To Receive",
+    "created_on": "2026-05-05T14:35:58.283Z"
+  }
+},
+{
+  "model": "merchstore.transaction",
+  "pk": 3,
+  "fields": {
+    "buyer": 3,
+    "product": 3,
+    "amount": 1,
+    "status": "To Ship",
+    "created_on": "2026-05-05T14:36:11.683Z"
+  }
+},
+{
+  "model": "merchstore.transaction",
+  "pk": 4,
+  "fields": {
+    "buyer": 2,
+    "product": 15,
+    "amount": 4,
+    "status": "On cart",
+    "created_on": "2026-05-05T14:36:25.618Z"
+  }
+},
+{
+  "model": "merchstore.transaction",
+  "pk": 5,
+  "fields": {
+    "buyer": 4,
+    "product": 6,
+    "amount": 5,
+    "status": "Delivered",
+    "created_on": "2026-05-05T14:36:43.534Z"
+  }
+},
+{
+  "model": "merchstore.transaction",
+  "pk": 6,
+  "fields": {
+    "buyer": 2,
+    "product": 1,
+    "amount": 1,
+    "status": "On cart",
+    "created_on": "2026-05-06T15:23:38.973Z"
+  }
+},
+{
+  "model": "localevents.eventtype",
+  "pk": 1,
+  "fields": {
+    "name": "Social",
+    "description": "Where people gather to talk, laugh, and pretend they’re not checking their phones."
+  }
+},
+{
+  "model": "localevents.eventtype",
+  "pk": 2,
+  "fields": {
+    "name": "Sports",
+    "description": "All about competition, teamwork, and occasional dramatic victories (or defeats)."
+  }
+},
+{
+  "model": "localevents.eventtype",
+  "pk": 3,
+  "fields": {
+    "name": "Workshops",
+    "description": "Learn something new… or at least leave feeling slightly more productive."
+  }
+},
+{
+  "model": "localevents.eventtype",
+  "pk": 4,
+  "fields": {
+    "name": "Conferences",
+    "description": "Big ideas, long talks, and lots of nodding like you understand everything."
+  }
+},
+{
+  "model": "localevents.eventtype",
+  "pk": 5,
+  "fields": {
+    "name": "Community Events",
+    "description": "Bringing people together for fun, causes, or just free food."
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 1,
+  "fields": {
+    "title": "Year-End Party",
+    "category": 1,
+    "event_image": "event_images/11-1200x1000.jpg",
+    "description": "Party party",
+    "location": "Red Brick Road",
+    "start_time": "2026-05-16T15:00:00Z",
+    "end_time": "2026-05-16T20:00:00Z",
+    "event_capacity": 100,
+    "status": "Available",
+    "created_on": "2026-05-04T12:11:46.110Z",
+    "updated_on": "2026-05-06T16:04:44.611Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 2,
+  "fields": {
+    "title": "Welcome Night Mixer",
+    "category": 1,
+    "event_image": "event_images/Screenshot_2026-05-05_at_5.56.04PM.png",
+    "description": "A casual gathering for newcomers to meet and connect with others over snacks and music.",
+    "location": "Campus Auditorium",
+    "start_time": "2026-06-10T18:00:00Z",
+    "end_time": "2026-06-10T21:00:00Z",
+    "event_capacity": 50,
+    "status": "Available",
+    "created_on": "2026-05-05T09:56:21.840Z",
+    "updated_on": "2026-05-05T09:56:21.840Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 3,
+  "fields": {
+    "title": "Friday Hangout Night",
+    "category": 1,
+    "event_image": "event_images/Screenshot_2026-05-05_at_5.57.38PM.png",
+    "description": "Chill evening with games, music, and open conversations to unwind the week.",
+    "location": "Student Lounge",
+    "start_time": "2026-06-14T17:00:00Z",
+    "end_time": "2026-06-14T20:00:00Z",
+    "event_capacity": 40,
+    "status": "Available",
+    "created_on": "2026-05-05T09:57:53.772Z",
+    "updated_on": "2026-05-05T09:57:53.772Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 4,
+  "fields": {
+    "title": "Inter-Department Basketball Game",
+    "category": 2,
+    "event_image": "event_images/Screenshot_2026-05-05_at_5.58.57PM.png",
+    "description": "Friendly basketball competition between departments showcasing teamwork and skill.",
+    "location": "Sports Complex Court A",
+    "start_time": "2026-06-12T15:00:00Z",
+    "end_time": "2026-06-12T17:00:00Z",
+    "event_capacity": 100,
+    "status": "Available",
+    "created_on": "2026-05-05T09:59:07.888Z",
+    "updated_on": "2026-05-05T09:59:07.888Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 5,
+  "fields": {
+    "title": "Morning Fitness Run",
+    "category": 2,
+    "event_image": "event_images/Screenshot_2026-05-05_at_5.59.50PM.png",
+    "description": "Community run to promote health and endurance for all participants.",
+    "location": "School Grounds Track Oval",
+    "start_time": "2026-06-15T06:00:00Z",
+    "end_time": "2026-06-15T07:30:00Z",
+    "event_capacity": 60,
+    "status": "Available",
+    "created_on": "2026-05-05T10:00:05.621Z",
+    "updated_on": "2026-05-05T10:00:05.621Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 6,
+  "fields": {
+    "title": "Intro to Web Development",
+    "category": 3,
+    "event_image": "event_images/Screenshot_2026-05-05_at_6.01.18PM.png",
+    "description": "Hands-on workshop covering HTML, CSS, and basic JavaScript for beginners.",
+    "location": "Computer Lab 2",
+    "start_time": "2026-06-11T09:00:00Z",
+    "end_time": "2026-06-11T12:00:00Z",
+    "event_capacity": 30,
+    "status": "Available",
+    "created_on": "2026-05-05T10:01:28.757Z",
+    "updated_on": "2026-05-05T10:01:28.757Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 7,
+  "fields": {
+    "title": "Creative Writing Basics",
+    "category": 3,
+    "event_image": "event_images/Screenshot_2026-05-05_at_6.03.19PM.png",
+    "description": "Learn storytelling techniques and improve your writing skills through guided exercises.",
+    "location": "Library Seminar Room",
+    "start_time": "2026-06-13T13:00:00Z",
+    "end_time": "2026-06-13T16:00:00Z",
+    "event_capacity": 40,
+    "status": "Available",
+    "created_on": "2026-05-05T10:03:29.149Z",
+    "updated_on": "2026-05-05T10:03:29.149Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 8,
+  "fields": {
+    "title": "Tech Innovation Summit",
+    "category": 4,
+    "event_image": "event_images/Screenshot_2026-05-05_at_6.04.45PM.png",
+    "description": "Talks and presentations on emerging technologies and digital transformation.",
+    "location": "Convention Hall A",
+    "start_time": "2026-06-20T09:00:00Z",
+    "end_time": "2026-06-20T17:00:00Z",
+    "event_capacity": 200,
+    "status": "Available",
+    "created_on": "2026-05-05T10:04:54.802Z",
+    "updated_on": "2026-05-05T10:04:54.802Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 9,
+  "fields": {
+    "title": "Education Futures Forum",
+    "category": 4,
+    "event_image": "event_images/Screenshot_2026-05-05_at_6.06.06PM.png",
+    "description": "Discussions on modern teaching methods and the future of learning systems.",
+    "location": "Grand Conference Center",
+    "start_time": "2026-06-22T10:00:00Z",
+    "end_time": "2026-06-22T16:00:00Z",
+    "event_capacity": 70,
+    "status": "Available",
+    "created_on": "2026-05-05T10:06:19.238Z",
+    "updated_on": "2026-05-05T10:06:19.238Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 10,
+  "fields": {
+    "title": "Barangay Clean-Up Drive",
+    "category": 5,
+    "event_image": "event_images/Screenshot_2026-05-05_at_6.07.12PM.png",
+    "description": "Community effort to clean public spaces and promote environmental awareness.",
+    "location": "Main Street and Nearby Parks",
+    "start_time": "2026-06-08T07:00:00Z",
+    "end_time": "2026-06-08T11:00:00Z",
+    "event_capacity": 100,
+    "status": "Available",
+    "created_on": "2026-05-05T10:07:21.721Z",
+    "updated_on": "2026-05-05T10:07:21.721Z"
+  }
+},
+{
+  "model": "localevents.event",
+  "pk": 11,
+  "fields": {
+    "title": "Charity Food Fair",
+    "category": 5,
+    "event_image": "event_images/Screenshot_2026-05-05_at_6.08.10PM.png",
+    "description": "Food stalls and donations to support local families in need.",
+    "location": "Town Plaza",
+    "start_time": "2026-06-16T10:00:00Z",
+    "end_time": "2026-06-16T18:00:00Z",
+    "event_capacity": 250,
+    "status": "Available",
+    "created_on": "2026-05-05T10:08:23.638Z",
+    "updated_on": "2026-05-05T10:08:23.638Z"
+  }
+},
+{
+  "model": "localevents.eventorganizer",
+  "pk": 1,
+  "fields": {
+    "event": 1,
+    "organizer": 3
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 1,
+  "fields": {
+    "event": 1,
+    "user_registrant": 4,
+    "new_registrant": ""
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 2,
+  "fields": {
+    "event": 1,
+    "user_registrant": null,
+    "new_registrant": "ammon"
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 3,
+  "fields": {
+    "event": 1,
+    "user_registrant": 2,
+    "new_registrant": ""
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 4,
+  "fields": {
+    "event": 1,
+    "user_registrant": null,
+    "new_registrant": "Byrone"
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 5,
+  "fields": {
+    "event": 1,
+    "user_registrant": null,
+    "new_registrant": "Tiana"
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 6,
+  "fields": {
+    "event": 8,
+    "user_registrant": 3,
+    "new_registrant": ""
+  }
+},
+{
+  "model": "localevents.eventsignup",
+  "pk": 7,
+  "fields": {
+    "event": 5,
+    "user_registrant": 2,
+    "new_registrant": ""
+  }
+}
+]
