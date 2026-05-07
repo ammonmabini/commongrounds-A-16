@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views import View
 from django.views.generic.edit import CreateView, UpdateView
+from django.core.exceptions import PermissionDenied
 
 from .forms import (
     ProjectForm,
@@ -145,9 +146,27 @@ class ProjectDetailView(View):
             project.get_absolute_url()
         )
 
+class ProjectCreatorRequiredMixin:
+    def dispatch(self, request, *args, **kwargs):
+
+        if not request.user.is_authenticated:
+            raise PermissionDenied
+
+        if (
+            request.user.profile.role
+            != 'Project Creator'
+        ):
+            raise PermissionDenied
+
+        return super().dispatch(
+            request,
+            *args,
+            **kwargs,
+        )
 
 class ProjectCreateView(
     LoginRequiredMixin,
+    ProjectCreatorRequiredMixin,
     CreateView,
 ):
     model = Project
@@ -164,6 +183,7 @@ class ProjectCreateView(
 
 class ProjectUpdateView(
     LoginRequiredMixin,
+    ProjectCreatorRequiredMixin,
     UpdateView,
 ):
     model = Project

@@ -29,7 +29,9 @@ SECRET_KEY = os.getenv('DJANGO_SECRET', 'dev-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
 
-ALLOWED_HOSTS = ["commongrounds-a-16.up.railway.app"]
+ALLOWED_HOSTS = ["commongrounds-a-16.up.railway.app",
+                 "127.0.0.1",
+                 'localhost',]
 
 CSRF_TRUSTED_ORIGINS = [
      "https://commongrounds-a-16.up.railway.app"
