@@ -1,10 +1,73 @@
-{% extends 'diyprojects_base.html' %}
-
-{% block header %}
-    <h1>DIY Projects</h1>
-{% endblock %}
-
 {% block content %}
+
+{% if user.is_authenticated %}
+
+<p>
+    <a href="{% url 'diyprojects:project-add' %}">
+        Create Project
+    </a>
+</p>
+
+<h2>Projects You Created</h2>
+
+<ul>
+    {% for project in created_projects %}
+        <li>
+            <a href="{{ project.get_absolute_url }}">
+                {{ project.title }}
+            </a>
+
+            {% if project.category %}
+                - {{ project.category.name }}
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No created projects yet.</li>
+    {% endfor %}
+</ul>
+
+
+<h2>Projects You Favorited</h2>
+
+<ul>
+    {% for project in favorited_projects %}
+        <li>
+            <a href="{{ project.get_absolute_url }}">
+                {{ project.title }}
+            </a>
+
+            {% if project.category %}
+                - {{ project.category.name }}
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No favorited projects yet.</li>
+    {% endfor %}
+</ul>
+
+
+<h2>Projects You Reviewed</h2>
+
+<ul>
+    {% for project in reviewed_projects %}
+        <li>
+            <a href="{{ project.get_absolute_url }}">
+                {{ project.title }}
+            </a>
+
+            {% if project.category %}
+                - {{ project.category.name }}
+            {% endif %}
+        </li>
+    {% empty %}
+        <li>No reviewed projects yet.</li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+
+<h2>All Projects</h2>
 
 <ul>
     {% for project in projects %}
@@ -17,6 +80,9 @@
                 - {{ project.category.name }}
             {% endif %}
         </li>
+    {% empty %}
+        <li>No projects yet.</li>
     {% endfor %}
 </ul>
+
 {% endblock %}
