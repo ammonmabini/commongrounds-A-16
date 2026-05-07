@@ -9,6 +9,7 @@ class Profile(models.Model):
     ROLE_EVENT_ORGANIZER = 'Event Organizer'
     ROLE_BOOK_CONTRIBUTOR = 'Book Contributor'
     ROLE_COMMISSION_MAKER = 'Commission Maker'
+    ROLE_PROJECT_CREATOR = 'Project Creator'
 
     ROLE_CHOICES = [
         (ROLE_MEMBER, 'Member'),
@@ -16,6 +17,7 @@ class Profile(models.Model):
         (ROLE_EVENT_ORGANIZER, 'Event Organizer'),
         (ROLE_BOOK_CONTRIBUTOR, 'Book Contributor'),
         (ROLE_COMMISSION_MAKER, 'Commission Maker'),
+        (ROLE_PROJECT_CREATOR, 'Project Creator'),
     ]
 
     user = models.OneToOneField(

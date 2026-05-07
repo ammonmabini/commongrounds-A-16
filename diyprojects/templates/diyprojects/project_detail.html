@@ -1,7 +1,7 @@
 {% extends 'diyprojects_base.html' %}
 
 {% block header %}
-    <h3> Project Detail </h3>
+    <h3>Project Detail</h3>
     <h1>{{ project.title }}</h1>
 {% endblock %}
 
@@ -21,6 +21,73 @@
 
 <p><strong>Created:</strong> {{ project.created_on }}</p>
 <p><strong>Updated:</strong> {{ project.updated_on }}</p>
+
+<p><strong>Favorites:</strong> {{ favorite_count }}</p>
+
+{% if average_rating %}
+    <p><strong>Average Rating:</strong> {{ average_rating }}</p>
+{% else %}
+    <p>No ratings yet.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+    {% if project.creator == user.profile %}
+        <p>
+            <a href="{% url 'diyprojects:project-edit' project.pk %}">
+                Edit Project
+            </a>
+        </p>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" name="favorite">
+                Favorite
+            </button>
+        </form>
+
+        <h3>Rate this project</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ rating_form.as_p }}
+            <button type="submit" name="rating">
+                Submit Rating
+            </button>
+        </form>
+
+        <h3>Review this project</h3>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ review_form.as_p }}
+            <button type="submit" name="review">
+                Submit Review
+            </button>
+        </form>
+    {% endif %}
+{% else %}
+    <p>
+        <a href="{% url 'login' %}">Login</a>
+        to favorite, rate, or review.
+    </p>
+{% endif %}
+
+<h3>Reviews</h3>
+{% for review in reviews %}
+    <div>
+        <p>{{ review.comment }}</p>
+
+        {% if review.image %}
+            <img
+                src="{{ review.image.url }}"
+                alt="Project review image"
+                width="200"
+            >
+        {% endif %}
+
+        <p>By {{ review.reviewer }}</p>
+    </div>
+{% empty %}
+    <p>No reviews yet.</p>
+{% endfor %}
 
 <p>
     <a href="{% url 'diyprojects:project-list' %}">Back to list</a>

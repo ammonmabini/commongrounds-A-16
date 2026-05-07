@@ -1,0 +1,22 @@
+{% extends 'diyprojects_base.html' %}
+
+{% block header %}
+    <h1>Project Form</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">
+        Save
+    </button>
+</form>
+
+<p>
+    <a href="{% url 'diyprojects:project-list' %}">
+        Back to projects
+    </a>
+</p>
+{% endblock %}
